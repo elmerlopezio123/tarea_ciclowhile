@@ -1,0 +1,31 @@
+import random
+
+intentos =0
+numeromin = 1
+numeromax = 20
+
+print ("Hola!! cual es tu nombre?")
+nombre=input()
+ 
+numero=random.randint(numeromin , numeromax)
+print("Mucho gusto "+ nombre +". Sabes, estoy pensando en un número del "+ str(numeromin) + " y " +str(numeromax))
+
+while intentos < 6:
+    print("el número que estoy pensanod es:")
+    adivina=input()
+    adivina=int(adivina)
+
+    intentos= intentos + 1
+    
+    if adivina < numero:
+        print("ups, el número que dices es muy bajo...intentalo de nuevo!!!")
+    if adivina > numero: 
+        print("vaya...creo que el número que das es muy alto intentalo de nuevo!!!")
+    if adivina == numero:
+        break
+if adivina == numero:
+    intentos = str(intentos)
+    print("CORRECTO, lo lograste,"+ nombre + "!! obtuviste "+ intentos+ " intentos!" )
+if adivina != numero:
+    numero= str(numero)
+    print("Lo lamento...el número que estaba pensando era "+numero+"" )
